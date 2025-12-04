@@ -35,3 +35,10 @@ logs/
 # Test results
 TestResults/
 *.trx
+
+# Secrets - NEVER COMMIT
+.claude/secrets/
+*.env
+!.env.example
+CLAUDE.md
+.claude/settings.local.json
