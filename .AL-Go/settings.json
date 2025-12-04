@@ -1,0 +1,22 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v8.1/.Modules/settings.schema.json",
+  "type": "PTE",
+  "templateUrl": "https://github.com/microsoft/AL-Go-PTE@main",
+  "country": "us",
+  "artifact": "///us/Latest",
+  "repoVersion": "1.0",
+  "appFolders": [ "." ],
+  "testFolders": [],
+  "bcptTestFolders": [],
+  "enableCodeCop": true,
+  "enableUICop": false,
+  "enablePerTenantExtensionCop": true,
+  "doNotRunTests": true,
+  "doNotRunBcptTests": true,
+  "environments": [ "Production" ],
+  "DeployToProduction": {
+    "environmentType": "SaaS",
+    "EnvironmentName": "Production",
+    "companyId": "edf8a60c-fdb9-f011-af60-6045bde9b982"
+  }
+}
