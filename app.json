@@ -15,24 +15,24 @@
       "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
       "name": "Library Assert",
       "publisher": "Microsoft",
-      "version": "24.0.0.0"
+      "version": "27.0.0.0"
     },
     {
       "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
       "name": "Tests-TestLibraries",
       "publisher": "Microsoft",
-      "version": "24.0.0.0"
+      "version": "27.0.0.0"
     },
     {
       "id": "4a571f85-12c1-40a2-aa0e-ac1be0b1dfe1",
       "name": "Performance Toolkit",
       "publisher": "Microsoft",
-      "version": "24.0.0.0"
+      "version": "27.0.0.0"
     }
   ],
   "screenshots": [],
-  "platform": "24.0.0.0",
-  "application": "24.0.0.0",
+  "platform": "27.0.0.0",
+  "application": "27.0.0.0",
   "idRanges": [
     {
       "from": 50100,
@@ -44,8 +44,8 @@
     "allowDownloadingSource": true,
     "includeSourceInSymbolFile": true
   },
-  "runtime": "13.0",
-  "target": "OnPrem",
+  "runtime": "16.0",
+  "target": "Cloud",
   "features": [
     "TranslationFile"
   ]
