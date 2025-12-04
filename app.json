@@ -1,0 +1,52 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "BCPT Demo Performance Tests",
+  "publisher": "Performance Testing Team",
+  "version": "1.0.0.0",
+  "brief": "Business Central Performance Test Toolkit scenarios for telemetry generation",
+  "description": "A comprehensive collection of BCPT test codeunits designed to simulate realistic business operations and generate telemetry data for performance analysis in Application Insights.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "",
+  "logo": "",
+  "dependencies": [
+    {
+      "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+      "name": "Library Assert",
+      "publisher": "Microsoft",
+      "version": "24.0.0.0"
+    },
+    {
+      "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+      "name": "Tests-TestLibraries",
+      "publisher": "Microsoft",
+      "version": "24.0.0.0"
+    },
+    {
+      "id": "4a571f85-12c1-40a2-aa0e-ac1be0b1dfe1",
+      "name": "Performance Toolkit",
+      "publisher": "Microsoft",
+      "version": "24.0.0.0"
+    }
+  ],
+  "screenshots": [],
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50199
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0",
+  "target": "OnPrem",
+  "features": [
+    "TranslationFile"
+  ]
+}

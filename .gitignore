@@ -1,0 +1,37 @@
+# AL Language Extension
+.alpackages/
+.alcache/
+*.app
+*.g.xlf
+
+# VS Code
+.vscode/
+!.vscode/launch.json
+!.vscode/settings.json
+
+# Build outputs
+bin/
+obj/
+out/
+
+# Symbols
+*.app
+Symbols/
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Test results
+TestResults/
+*.trx

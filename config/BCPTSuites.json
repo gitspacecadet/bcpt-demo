@@ -1,0 +1,466 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/BCApps/main/src/Tools/Performance%20Toolkit/App/src/BCPTSuite.schema.json",
+  "description": "BCPT Demo Suite Configurations for various load profiles",
+  "suites": [
+    {
+      "code": "BCPT-QUICK",
+      "description": "Quick Validation Suite - Fast smoke test (5 minutes)",
+      "durationMinutes": 5,
+      "defaultMinUserDelayMs": 100,
+      "defaultMaxUserDelayMs": 500,
+      "oneIterationOnly": false,
+      "tag": "QuickValidation",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 1,
+          "parameters": "MinLines=1,MaxLines=3,PostOrder=true",
+          "description": "Quick sales order creation and posting"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 1,
+          "parameters": "CalcInventory=true,CalcAvailability=false,SearchCount=3",
+          "description": "Quick item lookup"
+        },
+        {
+          "codeunitId": 50140,
+          "codeunitName": "BCPT API Read Customers",
+          "noOfSessions": 1,
+          "parameters": "ReadCount=5,IncludeRelated=false",
+          "description": "Quick API read test"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-BASELINE",
+      "description": "Baseline Performance Suite - Single user baseline measurement (10 minutes)",
+      "durationMinutes": 10,
+      "defaultMinUserDelayMs": 500,
+      "defaultMaxUserDelayMs": 2000,
+      "oneIterationOnly": false,
+      "tag": "Baseline",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 1,
+          "parameters": "MinLines=2,MaxLines=5,PostOrder=true,CustomerPoolSize=50,ItemPoolSize=100",
+          "description": "Sales order creation and posting baseline"
+        },
+        {
+          "codeunitId": 50102,
+          "codeunitName": "BCPT Sales Invoice Batch",
+          "noOfSessions": 1,
+          "parameters": "BatchSize=3,LinesPerInvoice=3",
+          "description": "Batch invoice processing baseline"
+        },
+        {
+          "codeunitId": 50103,
+          "codeunitName": "BCPT Sales Customer Search",
+          "noOfSessions": 1,
+          "parameters": "SearchByName=true,SearchByCity=true,IncludeBalanceCalc=true",
+          "description": "Customer search operations baseline"
+        },
+        {
+          "codeunitId": 50110,
+          "codeunitName": "BCPT Purchase Order Tracking",
+          "noOfSessions": 1,
+          "parameters": "MinLines=2,MaxLines=5,UseItemTracking=true",
+          "description": "Purchase order with tracking baseline"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 1,
+          "parameters": "LineCount=5",
+          "description": "Purchase invoice posting baseline"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 1,
+          "parameters": "CalcInventory=true,CalcAvailability=true,SearchCount=5",
+          "description": "Item lookup and search baseline"
+        },
+        {
+          "codeunitId": 50130,
+          "codeunitName": "BCPT Report Sales Statistics",
+          "noOfSessions": 1,
+          "parameters": "DateRangeDays=90",
+          "description": "Sales statistics report baseline"
+        },
+        {
+          "codeunitId": 50140,
+          "codeunitName": "BCPT API Read Customers",
+          "noOfSessions": 1,
+          "parameters": "ReadCount=10,IncludeRelated=true,PageSize=20",
+          "description": "API customer read baseline"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-LOAD-5",
+      "description": "Load Test Suite - 5 concurrent users (30 minutes)",
+      "durationMinutes": 30,
+      "defaultMinUserDelayMs": 1000,
+      "defaultMaxUserDelayMs": 5000,
+      "oneIterationOnly": false,
+      "tag": "Load5Users",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 2,
+          "parameters": "MinLines=2,MaxLines=5,PostOrder=true",
+          "description": "Sales order operations - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50103,
+          "codeunitName": "BCPT Sales Customer Search",
+          "noOfSessions": 1,
+          "parameters": "SearchByName=true,SearchByCity=true,IncludeBalanceCalc=true",
+          "description": "Customer search - 1 concurrent user"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 1,
+          "parameters": "LineCount=5",
+          "description": "Purchase processing - 1 concurrent user"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 1,
+          "parameters": "CalcInventory=true,CalcAvailability=true,SearchCount=5",
+          "description": "Inventory operations - 1 concurrent user"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-LOAD-10",
+      "description": "Load Test Suite - 10 concurrent users (45 minutes)",
+      "durationMinutes": 45,
+      "defaultMinUserDelayMs": 2000,
+      "defaultMaxUserDelayMs": 5000,
+      "oneIterationOnly": false,
+      "tag": "Load10Users",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 3,
+          "parameters": "MinLines=2,MaxLines=5,PostOrder=true",
+          "description": "Sales order operations - 3 concurrent users"
+        },
+        {
+          "codeunitId": 50102,
+          "codeunitName": "BCPT Sales Invoice Batch",
+          "noOfSessions": 1,
+          "parameters": "BatchSize=5,LinesPerInvoice=3",
+          "description": "Batch invoice processing - 1 concurrent user"
+        },
+        {
+          "codeunitId": 50103,
+          "codeunitName": "BCPT Sales Customer Search",
+          "noOfSessions": 2,
+          "parameters": "SearchByName=true,SearchByCity=true,IncludeBalanceCalc=true",
+          "description": "Customer search - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 2,
+          "parameters": "LineCount=5",
+          "description": "Purchase processing - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 2,
+          "parameters": "CalcInventory=true,CalcAvailability=true,SearchCount=5",
+          "description": "Inventory operations - 2 concurrent users"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-LOAD-25",
+      "description": "Heavy Load Test Suite - 25 concurrent users (60 minutes)",
+      "durationMinutes": 60,
+      "defaultMinUserDelayMs": 2000,
+      "defaultMaxUserDelayMs": 8000,
+      "oneIterationOnly": false,
+      "tag": "Load25Users",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 5,
+          "parameters": "MinLines=2,MaxLines=5,PostOrder=true",
+          "description": "Sales order operations - 5 concurrent users"
+        },
+        {
+          "codeunitId": 50102,
+          "codeunitName": "BCPT Sales Invoice Batch",
+          "noOfSessions": 2,
+          "parameters": "BatchSize=5,LinesPerInvoice=3",
+          "description": "Batch invoice processing - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50103,
+          "codeunitName": "BCPT Sales Customer Search",
+          "noOfSessions": 4,
+          "parameters": "SearchByName=true,SearchByCity=true,IncludeBalanceCalc=true",
+          "description": "Customer search - 4 concurrent users"
+        },
+        {
+          "codeunitId": 50110,
+          "codeunitName": "BCPT Purchase Order Tracking",
+          "noOfSessions": 2,
+          "parameters": "MinLines=3,MaxLines=8,UseItemTracking=true",
+          "description": "Purchase with tracking - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 3,
+          "parameters": "LineCount=5",
+          "description": "Purchase processing - 3 concurrent users"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 3,
+          "parameters": "CalcInventory=true,CalcAvailability=true,SearchCount=5",
+          "description": "Inventory operations - 3 concurrent users"
+        },
+        {
+          "codeunitId": 50122,
+          "codeunitName": "BCPT Inventory Availability",
+          "noOfSessions": 2,
+          "parameters": "ItemCount=20,DateRangeDays=30,IncludeVariants=true",
+          "description": "Availability calculations - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50140,
+          "codeunitName": "BCPT API Read Customers",
+          "noOfSessions": 2,
+          "parameters": "ReadCount=10,IncludeRelated=true,PageSize=20",
+          "description": "API read operations - 2 concurrent users"
+        },
+        {
+          "codeunitId": 50141,
+          "codeunitName": "BCPT API Create Sales Order",
+          "noOfSessions": 2,
+          "parameters": "LineCount=3,ValidateFields=true",
+          "description": "API create operations - 2 concurrent users"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-STRESS",
+      "description": "Stress Test Suite - Maximum load for breaking point analysis (60 minutes)",
+      "durationMinutes": 60,
+      "defaultMinUserDelayMs": 500,
+      "defaultMaxUserDelayMs": 2000,
+      "oneIterationOnly": false,
+      "tag": "StressTest",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 5,
+          "parameters": "MinLines=3,MaxLines=10,PostOrder=true",
+          "description": "Heavy sales operations"
+        },
+        {
+          "codeunitId": 50102,
+          "codeunitName": "BCPT Sales Invoice Batch",
+          "noOfSessions": 3,
+          "parameters": "BatchSize=10,LinesPerInvoice=5",
+          "description": "Heavy batch processing"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 3,
+          "parameters": "LineCount=10",
+          "description": "Heavy purchase processing"
+        },
+        {
+          "codeunitId": 50150,
+          "codeunitName": "BCPT DB Complex Query",
+          "noOfSessions": 2,
+          "parameters": "Complexity=Heavy,Iterations=5",
+          "description": "Database stress - complex queries"
+        },
+        {
+          "codeunitId": 50151,
+          "codeunitName": "BCPT DB Lock Contention",
+          "noOfSessions": 3,
+          "parameters": "OperationType=NumberSeries",
+          "description": "Database stress - lock contention"
+        },
+        {
+          "codeunitId": 50152,
+          "codeunitName": "BCPT DB Large Dataset",
+          "noOfSessions": 2,
+          "parameters": "RecordLimit=50000,ProcessingType=GLEntries",
+          "description": "Database stress - large dataset"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-API-ONLY",
+      "description": "API Performance Suite - Focus on API operations (30 minutes)",
+      "durationMinutes": 30,
+      "defaultMinUserDelayMs": 200,
+      "defaultMaxUserDelayMs": 1000,
+      "oneIterationOnly": false,
+      "tag": "APIPerformance",
+      "scenarios": [
+        {
+          "codeunitId": 50140,
+          "codeunitName": "BCPT API Read Customers",
+          "noOfSessions": 3,
+          "parameters": "ReadCount=20,IncludeRelated=true,PageSize=50",
+          "description": "API customer reads"
+        },
+        {
+          "codeunitId": 50141,
+          "codeunitName": "BCPT API Create Sales Order",
+          "noOfSessions": 2,
+          "parameters": "LineCount=5,ValidateFields=true",
+          "description": "API sales order creation"
+        },
+        {
+          "codeunitId": 50142,
+          "codeunitName": "BCPT API OData Query",
+          "noOfSessions": 3,
+          "parameters": "QueryCount=10,MaxRecords=200",
+          "description": "OData query operations"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-REPORTS",
+      "description": "Report Performance Suite - Focus on report execution (20 minutes)",
+      "durationMinutes": 20,
+      "defaultMinUserDelayMs": 5000,
+      "defaultMaxUserDelayMs": 15000,
+      "oneIterationOnly": false,
+      "tag": "ReportPerformance",
+      "scenarios": [
+        {
+          "codeunitId": 50130,
+          "codeunitName": "BCPT Report Sales Statistics",
+          "noOfSessions": 2,
+          "parameters": "DateRangeDays=365",
+          "description": "Sales statistics report - 1 year range"
+        },
+        {
+          "codeunitId": 50131,
+          "codeunitName": "BCPT Report Inventory Value",
+          "noOfSessions": 2,
+          "parameters": "IncludeExpectedCost=true",
+          "description": "Inventory valuation report"
+        },
+        {
+          "codeunitId": 50132,
+          "codeunitName": "BCPT Report Customer Ledger",
+          "noOfSessions": 1,
+          "parameters": "DateRangeDays=365,ShowOpenOnly=false",
+          "description": "Customer ledger report - full year"
+        },
+        {
+          "codeunitId": 50133,
+          "codeunitName": "BCPT Report Vendor Ledger",
+          "noOfSessions": 1,
+          "parameters": "DateRangeDays=365,IncludeAging=true",
+          "description": "Vendor ledger report with aging"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-DATABASE",
+      "description": "Database Performance Suite - Focus on database operations (30 minutes)",
+      "durationMinutes": 30,
+      "defaultMinUserDelayMs": 1000,
+      "defaultMaxUserDelayMs": 3000,
+      "oneIterationOnly": false,
+      "tag": "DatabasePerformance",
+      "scenarios": [
+        {
+          "codeunitId": 50150,
+          "codeunitName": "BCPT DB Complex Query",
+          "noOfSessions": 2,
+          "parameters": "Complexity=Complex,Iterations=5",
+          "description": "Complex multi-table queries"
+        },
+        {
+          "codeunitId": 50152,
+          "codeunitName": "BCPT DB Large Dataset",
+          "noOfSessions": 2,
+          "parameters": "RecordLimit=20000,ProcessingType=GLEntries",
+          "description": "GL entry processing"
+        },
+        {
+          "codeunitId": 50152,
+          "codeunitName": "BCPT DB Large Dataset",
+          "noOfSessions": 1,
+          "parameters": "RecordLimit=20000,ProcessingType=ItemLedger",
+          "description": "Item ledger processing"
+        },
+        {
+          "codeunitId": 50153,
+          "codeunitName": "BCPT DB Aggregate Operations",
+          "noOfSessions": 2,
+          "parameters": "DateRangeDays=365,GroupByLevel=Account",
+          "description": "Database aggregation queries"
+        }
+      ]
+    },
+    {
+      "code": "BCPT-ENDURANCE",
+      "description": "Endurance Test Suite - Long running stability test (4 hours)",
+      "durationMinutes": 240,
+      "defaultMinUserDelayMs": 5000,
+      "defaultMaxUserDelayMs": 15000,
+      "oneIterationOnly": false,
+      "tag": "EnduranceTest",
+      "scenarios": [
+        {
+          "codeunitId": 50101,
+          "codeunitName": "BCPT Sales Create Post Order",
+          "noOfSessions": 2,
+          "parameters": "MinLines=2,MaxLines=5,PostOrder=true",
+          "description": "Sustained sales operations"
+        },
+        {
+          "codeunitId": 50111,
+          "codeunitName": "BCPT Purchase Invoice Post",
+          "noOfSessions": 1,
+          "parameters": "LineCount=5",
+          "description": "Sustained purchase operations"
+        },
+        {
+          "codeunitId": 50120,
+          "codeunitName": "BCPT Inventory Item Lookup",
+          "noOfSessions": 1,
+          "parameters": "CalcInventory=true,CalcAvailability=true,SearchCount=3",
+          "description": "Sustained inventory queries"
+        },
+        {
+          "codeunitId": 50140,
+          "codeunitName": "BCPT API Read Customers",
+          "noOfSessions": 1,
+          "parameters": "ReadCount=5,IncludeRelated=false",
+          "description": "Sustained API operations"
+        }
+      ]
+    }
+  ]
+}
