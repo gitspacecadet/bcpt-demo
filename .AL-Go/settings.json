@@ -4,7 +4,9 @@
   "country": "us",
   "artifact": "///us/Latest",
   "repoVersion": "1.0",
-  "appFolders": [ "." ],
+  "appFolders": [
+    "."
+  ],
   "testFolders": [],
   "bcptTestFolders": [],
   "enableCodeCop": true,
@@ -12,7 +14,9 @@
   "enablePerTenantExtensionCop": true,
   "doNotRunTests": true,
   "doNotRunBcptTests": true,
-  "environments": [ "Production" ],
+  "environments": [
+    "Production"
+  ],
   "DeployToProduction": {
     "environmentType": "SaaS",
     "EnvironmentName": "Production",
