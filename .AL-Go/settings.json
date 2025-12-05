@@ -4,11 +4,11 @@
   "country": "us",
   "artifact": "///us/Latest",
   "repoVersion": "1.0",
-  "appFolders": [
+  "appFolders": [],
+  "testFolders": [],
+  "bcptTestFolders": [
     "."
   ],
-  "testFolders": [],
-  "bcptTestFolders": [],
   "enableCodeCop": true,
   "enableUICop": false,
   "enablePerTenantExtensionCop": true,
