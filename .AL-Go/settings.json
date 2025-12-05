@@ -17,8 +17,8 @@
   "installTestLibraries": true,
   "installTestFramework": true,
   "installPerformanceToolkit": true,
-  "useCompilerFolder": true,
-  "trustMicrosoftNuGetFeeds": false,
+  "useCompilerFolder": false,
+  "installOnlyReferencedApps": false,
   "testDependencies": [
     {
       "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
