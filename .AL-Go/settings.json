@@ -39,13 +39,5 @@
       "publisher": "Microsoft",
       "version": "latest"
     }
-  ],
-  "environments": [
-    "Production"
-  ],
-  "DeployToProduction": {
-    "environmentType": "SaaS",
-    "EnvironmentName": "Production",
-    "companyId": "edf8a60c-fdb9-f011-af60-6045bde9b982"
-  }
+  ]
 }
