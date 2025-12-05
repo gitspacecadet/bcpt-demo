@@ -19,14 +19,7 @@
   "installPerformanceToolkit": true,
   "useCompilerFolder": false,
   "installOnlyReferencedApps": false,
-  "appDependencyProbingPaths": [
-    {
-      "repo": "microsoft/bcsamples-onlinereferences",
-      "release_status": "latestBuild",
-      "projects": "*",
-      "country": "us"
-    }
-  ],
+  "updateDependencies": true,
   "testDependencies": [
     {
       "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
