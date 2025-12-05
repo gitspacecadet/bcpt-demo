@@ -15,6 +15,29 @@
   "doNotRunTests": true,
   "doNotRunBcptTests": true,
   "installTestLibraries": true,
+  "installTestFramework": true,
+  "installPerformanceToolkit": true,
+  "useCompilerFolder": true,
+  "testDependencies": [
+    {
+      "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
+      "name": "Library Assert",
+      "publisher": "Microsoft",
+      "version": "latest"
+    },
+    {
+      "id": "5d86850b-0d76-4eca-bd7b-951ad998e997",
+      "name": "Tests-TestLibraries",
+      "publisher": "Microsoft",
+      "version": "latest"
+    },
+    {
+      "id": "4a571f85-12c1-40a2-aa0e-ac1be0b1dfe1",
+      "name": "Performance Toolkit",
+      "publisher": "Microsoft",
+      "version": "latest"
+    }
+  ],
   "environments": [
     "Production"
   ],
