@@ -19,7 +19,14 @@
   "installPerformanceToolkit": true,
   "useCompilerFolder": false,
   "installOnlyReferencedApps": false,
-  "bcContainerHelperVersion": "6.0.30",
+  "appDependencyProbingPaths": [
+    {
+      "repo": "microsoft/bcsamples-onlinereferences",
+      "release_status": "latestBuild",
+      "projects": "*",
+      "country": "us"
+    }
+  ],
   "testDependencies": [
     {
       "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
