@@ -19,6 +19,7 @@
   "installPerformanceToolkit": true,
   "useCompilerFolder": false,
   "installOnlyReferencedApps": false,
+  "bcContainerHelperVersion": "6.0.30",
   "testDependencies": [
     {
       "id": "dd0be2ea-f733-4d65-bb34-a28f4624fb14",
